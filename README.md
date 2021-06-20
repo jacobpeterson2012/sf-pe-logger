@@ -1,18 +1,21 @@
-# Salesforce DX Project: Next Steps
+# Salesforce Platform Event Logger
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+This is a generic way to log platform events. Initial need was to do this to be ingested into Splunk.
 
-## How Do You Plan to Deploy Your Changes?
+TODO:
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+-   How to handle platform events which can only be subscribed to from flows/pe's eg FlowExecutionErrorEvent
+-   Mask data
 
-## Configure Your Salesforce DX Project
+## Generic Log
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+`PlatformEventLogger` will log all events to a big object `PlatformEventLog__b`
+|Fields|Description| Sample |
+|--|--|- |
+|EventJson**c| Serialised Event | `{"attributes":{"type":"CustomTestEvent**e","url":"/services/data/v52.0/sobjects/CustomTestEvent**e/4201218"},"CustomTextField**c":"generatedevent_2021-06-20 10:44:00_0","CreatedById":"0052O0000023ZGxQAM","ReplayId":"4201218","EventUuid":"a6e04d51-74c8-40a3-b878-3ba3ee7f93ad","CreatedDate":"2021-06-20T10:44:00.000+0000"}`|
 
-## Read All About It
+## Example
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+### CustomTestEvent\_\_e
+
+This is example of a customer platform event and subscription from an apex trigger `CustomTestEventTrigger`
