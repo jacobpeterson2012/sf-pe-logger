@@ -25,4 +25,11 @@ public without sharing class PlatformEventLogger {
         //TODO: Handle SaveResult
         Database.insertImmediate(logs);
     }
+
+    @InvocableMethod(label='Log Platform Events' description='Log Platform events to generic log')
+    public static void logEvents(List<SObject> events) {
+        System.debug('doing somthing');
+        System.debug(events);
+        //new PlatformEventLogger(events).flush();
+    }
 }
