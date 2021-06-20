@@ -1,0 +1,29 @@
+{
+  "printWidth": 80,
+  "tabWidth": 4,
+  "useTabs": false,
+  "trailingComma": "none",
+  "bracketSpacing": false,
+  "singleQuote": true,
+  "semi": false,
+  "overrides": [
+      {
+          "files": "**/lwc/**/*.html",
+          "options": {
+              "parser": "lwc"
+          }
+      },
+      {
+          "files": "*.{cmp,page,component}",
+          "options": {
+              "parser": "html"
+          }
+      },
+      {
+          "files": "*.cls",
+          "options": {
+              "printWidth": 120
+          }
+      }
+  ]
+}
