@@ -19,3 +19,9 @@ TODO:
 ### CustomTestEvent\_\_e
 
 This is example of a customer platform event and subscription from an apex trigger `CustomTestEventTrigger`
+
+### PlatformStatusAlertEvent
+
+This is an example of a apex trigger on a standard platform event BatchApexErrorEvent. A trigger `BatchApexErrorEventTrigger` has been created to call logger.
+
+This can be tested by calling `SampleErrorBatch.start()`
